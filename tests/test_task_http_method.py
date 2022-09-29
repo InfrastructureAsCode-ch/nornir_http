@@ -17,7 +17,7 @@ def test_get_json(httpx_mock: HTTPXMock):
 def test_get_text(httpx_mock: HTTPXMock):
     data = "this is a normal text"
     # content-type header will be set to application/json
-    httpx_mock.add_response(data=data)
+    httpx_mock.add_response(text=data)
 
     result = http_method(method="get", url="http://localhost/")
     assert result.result == data

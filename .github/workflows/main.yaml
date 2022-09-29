@@ -1,6 +1,6 @@
 ---
 name: test nornir_http
-on: [push,pull_request]
+on: [push, pull_request]
 
 jobs:
   linters:
@@ -38,7 +38,7 @@ jobs:
         shell: bash
     strategy:
       matrix:
-        python-version: [ '3.6', '3.7', '3.8', '3.9', '3.10']
+        python-version: ["3.8", "3.9", "3.10"]
         platform: [ubuntu-latest, macOS-10.15, windows-latest]
     runs-on: ${{ matrix.platform }}
     steps:
@@ -61,7 +61,7 @@ jobs:
         with:
           path: .venv
           key: venv-${{ matrix.python-version }}-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-        if: ${{ matrix.platform != 'windows-latest' }}  # windows hangs if using a cached venv
+        if: ${{ matrix.platform != 'windows-latest' }} # windows hangs if using a cached venv
 
       - name: Install Dependencies
         run: poetry install --no-interaction --no-root
