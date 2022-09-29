@@ -4,6 +4,10 @@ version = "0.1.1"
 description = "http plugins for nornir"
 authors = ["ubaumann <github@m.ubaumann.ch>"]
 license = "Apache-2.0"
+keywords = ["nornir", "http", "nornir-plugin"]
+readme = "README.md"
+repository = "https://github.com/InfrastructureAsCode-ch/nornir_http"
+homepage = "https://github.com/InfrastructureAsCode-ch/nornir_http"
 
 [tool.poetry.dependencies]
 python = "^3.8"
