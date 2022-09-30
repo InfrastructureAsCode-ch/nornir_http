@@ -1,6 +1,6 @@
 # nornir_http
 
-Collection of simple plugins for [nornir](github.com/nornir-automation/nornir/)
+Simple HTTP Task plugins for [nornir](https://github.com/nornir-automation/nornir/)
 
 
 ## Install
