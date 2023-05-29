@@ -2,4 +2,4 @@ from nornir_http import __version__
 
 
 def test_version():
-    assert __version__ == "0.1.2"  # From Makefile
+    assert __version__ == "0.1.3"  # From Makefile
