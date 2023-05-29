@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nornir_http"
-version = "0.1.2"
+version = "0.1.3"
 description = "http plugins for nornir"
 authors = ["ubaumann <github@m.ubaumann.ch>"]
 license = "Apache-2.0"
@@ -11,14 +11,14 @@ homepage = "https://github.com/InfrastructureAsCode-ch/nornir_http"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-httpx = "^0.23.0"
+httpx = "^0.24"
 nornir = "^3"
 
 [tool.poetry.dev-dependencies]
-pytest = "^6.2"
+pytest = "^7"
 black = "*"
-mypy = "^0.981"
-pytest-httpx = "^0.21.0"
+mypy = "^1"
+pytest-httpx = "^0.22.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

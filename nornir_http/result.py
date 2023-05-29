@@ -30,6 +30,5 @@ class HTTPResult(Result):
         failed: bool = False,
         **kwargs: Any
     ):
-
         super().__init__(host=host, result=result, failed=failed, **kwargs)
         self.response = response
