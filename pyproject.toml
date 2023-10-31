@@ -11,14 +11,14 @@ homepage = "https://github.com/InfrastructureAsCode-ch/nornir_http"
 
 [tool.poetry.dependencies]
 python = "^3.8"
-httpx = "^0.24"
+httpx = "^0.24|^0.25"
 nornir = "^3"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7"
 black = "*"
 mypy = "^1"
-pytest-httpx = "^0.22.0"
+pytest-httpx = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
