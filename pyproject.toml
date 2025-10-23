@@ -1,25 +1,13 @@
-[tool.poetry]
+[project]
 name = "nornir_http"
 version = "0.1.3"
 description = "http plugins for nornir"
-authors = ["ubaumann <github@m.ubaumann.ch>"]
-license = "Apache-2.0"
-keywords = ["nornir", "http", "nornir-plugin"]
+authors = [{ name = "ubaumann", email = "github@m.ubaumann.ch" }]
+license = { text = "Apache-2.0" }
 readme = "README.md"
-repository = "https://github.com/InfrastructureAsCode-ch/nornir_http"
-homepage = "https://github.com/InfrastructureAsCode-ch/nornir_http"
+requires-python = ">=3.10"
+keywords = ["nornir", "http", "nornir-plugin"]
+dependencies = ["httpx>=0.24,>=0.25,>=0.26,>=0.27,>=0.28", "nornir>=3"]
 
-[tool.poetry.dependencies]
-python = "^3.10"
-httpx = "^0.24|^0.25|^0.26|^0.27|^0.28"
-nornir = "^3"
-
-[tool.poetry.dev-dependencies]
-pytest = "^8"
-black = "*"
-mypy = "^1"
-pytest-httpx = "*"
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[dependency-groups]
+dev = ["pytest>=8", "black", "mypy>=1", "pytest-httpx"]
