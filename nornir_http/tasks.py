@@ -10,7 +10,7 @@ def http_method(
     url: str = "",
     raise_for_status: bool = False,
     is_error: bool = True,
-    **kwargs: Any
+    **kwargs: Any,
 ) -> HTTPResult:
     """
     This is a helper task that uses `httpx <https://www.python-httpx.org/api/>`_ to
