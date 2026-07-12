@@ -1,4 +1,4 @@
-import httpx
+import httpx2
 from typing import Optional, Any
 from nornir.core.task import Task
 from nornir_http.result import HTTPResult
@@ -13,22 +13,22 @@ def http_method(
     **kwargs: Any,
 ) -> HTTPResult:
     """
-    This is a helper task that uses `httpx <https://www.python-httpx.org/api/>`_ to
+    This is a helper task that uses `httpx2 <https://www.python-httpx2.org/api/>`_ to
     interact with an HTTP server.
     Arguments:
         method: HTTP method to call
         url: URL to connect to
         raise_for_status: Whether to call `raise_for_status` method or not
         is_error: Whether to set Result.failed or not based on status code
-        **kwargs: Keyword arguments will be passed to the request `httpx.request` method
+        **kwargs: Keyword arguments will be passed to the request `httpx2.request` method
     Returns:
         Result.result dict with the following keys set:
           * result (``str/dict``): Body of the response. Either text or a dict
                                    if the response was a json object
-          * response (``httpx.Response``): Original `Response`
+          * response (``httpx2.Response``): Original `Response`
           * failed (``bool``): set to `response.is_failed` if is_error is true
     """
-    response = httpx.request(method, url, **kwargs)
+    response = httpx2.request(method, url, **kwargs)
 
     if raise_for_status:
         response.raise_for_status()

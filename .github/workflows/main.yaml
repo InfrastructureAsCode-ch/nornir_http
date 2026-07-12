@@ -23,7 +23,9 @@ jobs:
         run: uv sync --locked --all-extras --dev
 
       - name: Run black
-        run: uv run black --check .
+        run: make black
+      - name: Run mypy
+        run: make mypy
 
   pytest:
     name: Testing on Python ${{ matrix.python-version }} (${{ matrix.platform}})
@@ -34,7 +36,10 @@ jobs:
       fail-fast: false
       matrix:
         python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
-        platform: [ubuntu-latest, macos-13, windows-latest]
+        platform:
+          - ubuntu-latest
+          - macos-15
+          - windows-2022
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v5
@@ -63,9 +68,9 @@ jobs:
         uses: astral-sh/setup-uv@v6
         with:
           enable-cache: true
-          python-version: "3.10"
+          python-version: "3.13"
 
-      - name: Build release
+      - name: build release
         run: uv build
 
       - name: Publish package to PyPI
