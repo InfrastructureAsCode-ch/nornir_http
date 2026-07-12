@@ -1,5 +1,5 @@
 from typing import Any, Union
-from httpx import Response
+from httpx2 import Response
 from nornir.core.task import Result
 from nornir.core.inventory import Host
 
@@ -11,13 +11,13 @@ class HTTPResult(Result):
 
     Arguments:
         result (obj): Result of the task execution, see task's documentation for details
-        response (:obj:`httpx.Response`): Response of the http request
+        response (:obj:`httpx2.Response`): Response of the http request
         host (:obj:`nornir.core.inventory.Host`): Reference to the host
         failed (bool): Whether the execution failed or not
 
     Attributes:
         result (obj): Result of the task execution, see task's documentation for details
-        response (:obj:`httpx.Response`): Response of the http request
+        response (:obj:`httpx2.Response`): Response of the http request
         host (:obj:`nornir.core.inventory.Host`): Reference to the host
         failed (bool): Whether the execution failed or not
     """

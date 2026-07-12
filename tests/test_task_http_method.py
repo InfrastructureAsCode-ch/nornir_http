@@ -1,6 +1,6 @@
 import pytest
-import httpx
-from pytest_httpx import HTTPXMock  # type: ignore
+import httpx2
+from pytest_httpx2 import HTTPXMock
 from nornir_http.tasks import http_method
 
 
@@ -47,7 +47,7 @@ def test_disable_is_error(httpx_mock: HTTPXMock, status_code: int):
 @pytest.mark.parametrize("status_code", [404, 401, 500])
 def test_enable_raise_for_status(httpx_mock: HTTPXMock, status_code: int):
     httpx_mock.add_response(status_code=status_code)
-    with pytest.raises(httpx.HTTPStatusError):
+    with pytest.raises(httpx2.HTTPStatusError):
         http_method(method="get", url="http://localhost/", raise_for_status=True)
 
 
