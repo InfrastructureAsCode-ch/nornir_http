@@ -507,7 +507,7 @@ wheels = [
 
 [[package]]
 name = "nornir-http"
-version = "0.1.4"
+version = "0.2.0"
 source = { virtual = "." }
 dependencies = [
     { name = "httpx2", version = "2.14.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },

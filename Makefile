@@ -24,5 +24,5 @@ tests: pytest black mypy
 .PHONY: bump
 bump:
 	uv version --bump ${ARGS}
-	sed -i -E "s|\"\b[0-9]+.\b[0-9]+.\b[0-9]+\"  # From Makefile|\"`uv version -s`\"  # From Makefile|g" ${PROJECT}/__init__.py
-	sed -i -E "s|\"\b[0-9]+.\b[0-9]+.\b[0-9]+\"  # From Makefile|\"`uv version -s`\"  # From Makefile|g" tests/test_${PROJECT}.py
+	sed -i -E "s|\"\b[0-9]+.\b[0-9]+.\b[0-9]+\"  # From Makefile|\"`uv version --short`\"  # From Makefile|g" ${PROJECT}/__init__.py
+	sed -i -E "s|\"\b[0-9]+.\b[0-9]+.\b[0-9]+\"  # From Makefile|\"`uv version --short`\"  # From Makefile|g" tests/test_${PROJECT}.py

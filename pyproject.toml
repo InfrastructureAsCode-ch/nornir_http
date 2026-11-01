@@ -1,6 +1,6 @@
 [project]
 name = "nornir_http"
-version = "0.1.4"
+version = "0.2.0"
 description = "http plugins for nornir"
 authors = [{ name = "ubaumann", email = "github@m.ubaumann.ch" }]
 license = { text = "Apache-2.0" }
